@@ -26,7 +26,7 @@ const AddUser = (props) =>{
         })
         return;
      }
-     console.log(enteredUsername, enteredAge)
+    //  console.log(enteredUsername, enteredAge)
       props.onAddUser(enteredUsername, enteredAge)
       setEnteredUsername('');
       setEnteredAge('');
@@ -34,7 +34,7 @@ const AddUser = (props) =>{
 
     const usernameChangeHandler = (event) =>{
         setEnteredUsername(event.target.value);
-        console.log(enteredUsername)
+        // console.log(enteredUsername)
     }
 
     const ageChangeHandler  = (event) =>{
@@ -58,11 +58,15 @@ const AddUser = (props) =>{
                     <form onSubmit={addUserHandler}>
                         <label htmlFor="username">Username </label>
                         <input
-                            type="text" id="username" value ={enteredUsername} onChange= {usernameChangeHandler}
+                            type="text"
+                             id="username" 
+                             value ={enteredUsername} onChange= {usernameChangeHandler}
                             /> 
                         <label htmlFor="age" >Age (Years)</label>
                         <input 
-                            id="age" type="number" value={enteredAge} onChange = {ageChangeHandler} 
+                            id="age"
+                            type="number"
+                            value={enteredAge} onChange = {ageChangeHandler} 
                             required/>
                         <Button type="submit">Add User</Button>
                     </form>
