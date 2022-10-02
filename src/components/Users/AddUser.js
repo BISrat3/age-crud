@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+
 import Card from "../UI/Card";
 import classes from "./AddUser.module.css"
 import Button from "../UI/Button";
@@ -15,14 +16,14 @@ const AddUser = (props) =>{
      if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0){
         setError({
             title: "Invalid input",
-            message: "Please enter a valid name and age (non-empty values)"
+            message: "Please enter a valid name and age (non-empty values)",
         })
         return;
      }
      if (+enteredAge<1){
         setError({
             title: "Invalid age",
-            message: "Please enter a valid age (>0)"
+            message: "Please enter a valid age (>0)",
         })
         return;
      }
@@ -66,7 +67,8 @@ const AddUser = (props) =>{
                         <input 
                             id="age"
                             type="number"
-                            value={enteredAge} onChange = {ageChangeHandler} 
+                            value={enteredAge}
+                            onChange = {ageChangeHandler} 
                             required/>
                         <Button type="submit">Add User</Button>
                     </form>
