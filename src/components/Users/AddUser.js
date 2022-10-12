@@ -18,9 +18,12 @@ const AddUser = (props) =>{
     const addUserHandler = (event) =>{
 
       event.preventDefalut(); 
-      console.log(nameInputRef.current.value);
+    //   console.log(event.nameInputRef)
+    //   console.log(nameInputRef.current.value);
+
       const enteredName = nameInputRef.current.value;
-      const enteredUserAge= ageInputRef.current.value
+      const enteredUserAge= ageInputRef.current.value;
+
      if (enteredName.trim().length === 0 || enteredUserAge.trim().length === 0){
         setError({
             title: "Invalid input",
@@ -31,7 +34,7 @@ const AddUser = (props) =>{
      if (+enteredUserAge<1){
         setError({
             title: "Invalid age",
-            message: "Please enter a valid age (>0)",
+            message: "Please enter a valid age (>0).",
         })
         return;
      }
@@ -81,7 +84,7 @@ const AddUser = (props) =>{
                             // value={enteredAge}
                             // onChange = {ageChangeHandler} 
                             ref={ageInputRef}
-                            required/>
+                        />
                         <Button type="submit">Add User</Button>
                     </form>
                 </Card>
